@@ -93,11 +93,11 @@ cd assignment_1
 python main.py
 ```
 
-The tests can be run with:
+Run the tests with:
 
 ```powershell
 cd assignment_1
-python tests/tests.py
+python -m unittest discover -s tests
 ```
 
 The project also supports `uv`. Install `uv`, then run from the repository
