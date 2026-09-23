@@ -2,7 +2,7 @@ import contextlib
 import io
 import unittest
 
-from analyzer import (
+from fitness_analyzer.analyzer import (
     Participant,
     Observation,
     FitnessObservation,
@@ -14,7 +14,7 @@ from analyzer import (
     detect_recovery,
     compare_to_baseline,
 )
-import sample_data
+from fitness_analyzer import sample_data
 import main
 
 
@@ -162,7 +162,7 @@ class TestClassificationScenarios(unittest.TestCase):
             )
 
     def test_generated_scenarios_robust_across_seeds(self):
-        from data_generator import generate_fitness_data
+        from fitness_analyzer.data_generator import generate_fitness_data
         checks = {
             "resting": "resting",
             "moderate_activity": "moderate activity",

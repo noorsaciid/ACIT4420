@@ -1,7 +1,7 @@
 """Run the sample fitness analyses."""
 
-from analyzer import Session, format_report
-from sample_data import all_scenarios
+from fitness_analyzer.analyzer import Session, format_report
+from fitness_analyzer.sample_data import all_scenarios
 
 
 def analyze_scenario(name, profile, observations):

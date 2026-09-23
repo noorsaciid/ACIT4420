@@ -1,6 +1,6 @@
 """Sample scenarios used by the program and tests."""
 
-from data_generator import generate_fitness_data
+from .data_generator import generate_fitness_data
 
 
 GENERATED_SCENARIOS = {

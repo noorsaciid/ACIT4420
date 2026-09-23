@@ -36,18 +36,20 @@ Only the Python standard library is used (`statistics` and `unittest`).
 smart-fitness-session-analyzer/
 |-- README.md            <- this file
 |-- main.py              <- entry point: runs every scenario and prints reports
-|-- analyzer.py          <- the object model + standalone functions (the solution)
-|-- sample_data.py       <- reproducible sample datasets (5 generated + 2 handcrafted)
-|-- tests.py             <- unittest suite
+|-- fitness_analyzer/    <- application package
+|   |-- analyzer.py      <- object model and standalone functions
+|   |-- sample_data.py   <- reproducible sample datasets
+|   `-- data_generator.py <- instructor-supplied data generator
+|-- tests/               <- unittest suite
+|   `-- tests.py
 |-- pyproject.toml       <- project metadata and uv configuration
 |-- uv.lock              <- reproducible uv lockfile
-|-- data_generator.py    <- instructor-supplied data generator (unmodified)
-`-- DATA_DESCRIPTION.md   <- instructor-supplied data description
+`-- docs/DATA_DESCRIPTION.md <- instructor-supplied data description
 ```
 
-The solution is split into a small `analyzer.py` module so that `main.py` stays
-a thin entry point and the same classes can be imported by `tests.py`. The
-project uses `uv` to manage its environment and has no third-party packages.
+The solution is split into a small package so that `main.py` stays a thin entry
+point and tests can import the same classes. The project uses `uv` to manage
+its environment and has no third-party packages.
 
 ---
 
@@ -98,7 +100,7 @@ presentation reusable and testable on their own: `is_real_number`, `summarize`,
 
 A window is **usable** only if every field is present and within range **and**
 its `signal_quality` is at least **0.50**. The accepted ranges (from
-`DATA_DESCRIPTION.md`) are:
+`docs/DATA_DESCRIPTION.md`) are:
 
 | Field | Valid range |
 |---|---|
@@ -132,7 +134,7 @@ absolute heart rate is interpreted relative to the individual.
 5. **high activity** — anything above the moderate thresholds.
 
 These thresholds were calibrated against the supplied `data_generator.py` and
-verified to hold across many random seeds (see `tests.py`).
+verified to hold across many random seeds (see `tests/tests.py`).
 
 ---
 
@@ -148,7 +150,7 @@ uv run main.py
 Run the test suite with:
 
 ```bash
-uv run tests.py
+uv run python -m unittest discover -s tests
 ```
 
 ---
