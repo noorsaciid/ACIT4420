@@ -1,0 +1,7 @@
+[project]
+name = "smart-fitness-session-analyzer"
+version = "0.1.0"
+description = "Object-oriented fitness session analysis application"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
