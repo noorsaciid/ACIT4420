@@ -74,16 +74,23 @@ The program runs seven scenarios:
 `Session.analyze()` returns the structured result as a dictionary, and
 `format_report()` produces the console report.
 
-## Run the Project
+## Run with uv
 
-Install `uv`, then run from the project directory:
+Install `uv` if it is not already installed. From PowerShell, move into the
+project directory and create the environment from `pyproject.toml`:
 
 ```powershell
+cd smart-fitness-session-analyzer
 uv sync
+```
+
+Run the application:
+
+```powershell
 uv run main.py
 ```
 
-Run the tests:
+Run the test suite:
 
 ```powershell
 uv run python -m unittest discover -s tests
