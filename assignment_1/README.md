@@ -100,8 +100,8 @@ cd assignment_1
 python -m unittest discover -s tests
 ```
 
-The project also supports `uv`. Install `uv`, then run from the repository
-the `assignment_1` directory:
+The project also supports `uv`. Install `uv`, then run the following commands
+from the repository root:
 
 ```powershell
 cd assignment_1
