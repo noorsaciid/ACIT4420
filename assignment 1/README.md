@@ -18,7 +18,7 @@ environment are managed with `uv`.
 ## Project Structure
 
 ```text
-smart-fitness-session-analyzer/
+assignment 1/
 |-- fitness_analyzer/
 |   |-- analyzer.py          # Classes and analysis functions
 |   |-- data_generator.py    # Supplied data generator
@@ -82,25 +82,29 @@ The required standard Python workflow is:
 ```bash
 git clone https://github.com/noorsaciid/ACIT4420.git
 cd ACIT4420
+cd "assignment 1"
 python3 main.py
 ```
 
 On Windows, if the command is `python` rather than `python3`, use:
 
 ```powershell
+cd "assignment 1"
 python main.py
 ```
 
 The tests can be run with:
 
 ```powershell
+cd "assignment 1"
 python tests/tests.py
 ```
 
 The project also supports `uv`. Install `uv`, then run from the repository
-root:
+the `assignment 1` directory:
 
 ```powershell
+cd "assignment 1"
 uv sync
 uv run main.py
 uv run python -m unittest discover -s tests
