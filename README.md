@@ -31,6 +31,7 @@ smart-fitness-session-analyzer/
 |-- main.py                  # Program entry point
 |-- pyproject.toml           # uv project configuration
 |-- uv.lock                 # Locked environment
+|-- requirements.txt        # Standard-library dependency note
 `-- .gitignore
 ```
 
@@ -74,27 +75,51 @@ The program runs seven scenarios:
 `Session.analyze()` returns the structured result as a dictionary, and
 `format_report()` produces the console report.
 
-## Run with uv
+## Installation and Running
 
-Install `uv` if it is not already installed. From PowerShell, move into the
-project directory and create the environment from `pyproject.toml`:
+The required standard Python workflow is:
+
+```bash
+git clone https://github.com/noorsaciid/ACIT4420.git
+cd ACIT4420
+python3 main.py
+```
+
+On Windows, if the command is `python` rather than `python3`, use:
 
 ```powershell
-cd smart-fitness-session-analyzer
+python main.py
+```
+
+The tests can be run with:
+
+```powershell
+python tests/tests.py
+```
+
+The project also supports `uv`. Install `uv`, then run from the repository
+root:
+
+```powershell
 uv sync
-```
-
-Run the application:
-
-```powershell
 uv run main.py
-```
-
-Run the test suite:
-
-```powershell
 uv run python -m unittest discover -s tests
 ```
+
+## Example Output
+
+```text
+SESSION REPORT - participant P001
+Windows: 12 total, 12 usable, 0 flagged
+Classification: HIGH ACTIVITY
+Recovery detected: no
+```
+
+## Known Limitations
+
+- Classification uses fixed thresholds calibrated for the supplied generator.
+- Recovery compares the first and last thirds of a session.
+- The program analyses one session at a time and does not store results.
 
 The test suite covers the required classes, inheritance, composition,
 encapsulation, validation, scenarios, structured results, and reporting.

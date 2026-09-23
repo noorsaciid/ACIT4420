@@ -1,0 +1,2 @@
+# This project uses only the Python standard library.
+# The development environment is managed with uv and pyproject.toml.
