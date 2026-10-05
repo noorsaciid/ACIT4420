@@ -1,0 +1,9 @@
+[project]
+name = "smart-fitness-session-analyzer-assignment-2"
+version = "0.1.0"
+description = "CSV-based continuation of the Smart Fitness Session Analyzer"
+requires-python = ">=3.10"
+dependencies = []
+
+[dependency-groups]
+dev = []
